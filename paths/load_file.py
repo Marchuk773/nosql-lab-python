@@ -12,9 +12,9 @@ def load_file():
     if not endpoint:
         return "No path provided", 400
 
-    file_processor = FileProcessor(destination)
+    file_processor = FileProcessor(destination, endpoint)
     try:
-        result = file_processor.process(endpoint)
+        result = file_processor.process()
     except ProcessingError as e:
         return e.msg, 500
 

@@ -4,14 +4,16 @@ def get_chunks(generator, size):
 
 
 def _head(iterator, size):
+    offset = 0
     i = 0
     data = []
     for chunk in iterator:
         data.append(chunk)
         i += 1
         if i >= size:
-            yield data
+            yield data, offset
+            offset += 1
             i = 0
             data = []
     if i:
-        yield data
+        yield data, offset
