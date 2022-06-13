@@ -18,6 +18,5 @@ class FileWriter(BaseWritter):
         os.makedirs(os.path.basename(self.filepath), exist_ok=True)
         with open(os.path.join(self.filepath, f"{self.identifier}_{offset}.json"), "w") as output_f:
             dump(content, output_f)
-            output_f.write("\n")
 
         self.set_intermediate_status(offset)
