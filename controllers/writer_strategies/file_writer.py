@@ -18,7 +18,7 @@ class FileWriter(BaseWritter):
             return
 
         os.makedirs(os.path.basename(self.filepath), exist_ok=True)
-        with open(os.path.join(self.filepath, f"{self.identifier}.json"), "a" if self.append else "w") as output_f:
+        with open(os.path.join(self.filepath, f"{self.identifier}_{offset}.json"), "a" if self.append else "w") as output_f:
             dump(content, output_f)
             output_f.write("\n")
 

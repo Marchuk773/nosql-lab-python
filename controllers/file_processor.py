@@ -6,7 +6,7 @@ from threading import Thread
 from sodapy import Socrata
 
 from utils.utils import get_chunks
-from .writer_strategies.consol_writer import ConsoleWriter
+from .writer_strategies.console_writer import ConsoleWriter
 from .writer_strategies.file_writer import FileWriter
 from .writer_strategies.kafka_writer import KafkaWriter
 
