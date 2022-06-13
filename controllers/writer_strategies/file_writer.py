@@ -20,5 +20,4 @@ class FileWriter(BaseWritter):
             dump(content, output_f)
             output_f.write("\n")
 
-        self.append = True
         self.set_intermediate_status(offset)
