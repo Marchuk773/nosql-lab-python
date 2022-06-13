@@ -19,7 +19,8 @@ class KafkaWriter(BaseWritter):
             return
 
         event_data_batch = self.producer.create_batch()
-        event_data_batch.add(EventData(json.dumps(content)))
+        for item in content:
+            event_data_batch.add(EventData(json.dumps(item)))
         self.producer.send_batch(event_data_batch)
 
         self.set_intermediate_status(offset)
